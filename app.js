@@ -25,6 +25,7 @@ const adminlsider = require("./Routes/Admin/slider");
 const useraddress = require("./Routes/User/address");
 const whishlish = require("./Routes/User/whislist");
 const addaddress = require("./Routes/User/address");
+const addOrder = require("./Routes/User/orders");
 //middleware
 app.use(express.json());
 app.use(morgan("dev"));
@@ -41,6 +42,7 @@ app.use("/api/v1/admin", adminlsider);
 app.use("/api/v1/user", useraddress);
 app.use("/api/v1/user", whishlish);
 app.use("/api/v1/user", addaddress);
+app.use("/api/v1/user", addOrder);
 
 app.get("/", (req, res) => {
   res.send("Hello, Raghavendra!");

@@ -31,7 +31,7 @@ class products {
 
       let Newproduct = new adminproducts(obj);
       Newproduct.save().then((data) => {
-        console.log(data);
+        // console.log(data);
         return res.status(201).json({
           success: true,
           message: "Product Created Successfully",
@@ -51,7 +51,7 @@ class products {
 
   async getallproduct(req, res) {
     let product = await adminproducts.find({});
-    console.log(product);
+    // console.log(product);
     if (product) {
       return res.status(200).json({
         product: product,
@@ -66,7 +66,7 @@ class products {
   async singleproduct(req, res) {
     let { id } = req.params;
     let singproduct = await adminproducts.findOne({ _id: id });
-    console.log(singproduct);
+    // console.log(singproduct);
     if (singproduct) {
       return res.status(200).json({
         product: singproduct,
@@ -94,7 +94,7 @@ class products {
     let { id } = req.params;
     try {
       let dproduct = await adminproducts.findByIdAndDelete({ _id: id });
-      console.log(dproduct);
+      // console.log(dproduct);
       return res.status(200).json({
         Success: "Removed Successfully",
       });
@@ -154,7 +154,7 @@ class products {
         { $set: obj },
         { new: true }
       );
-      console.log(updatesproducts);
+      // console.log(updatesproducts);
       return res.status(200).json({
         Success: "Update Successfully",
       });
